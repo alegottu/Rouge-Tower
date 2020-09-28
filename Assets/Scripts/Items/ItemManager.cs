@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager
 {
-    
+    public static List<Item> playerItems;
 }

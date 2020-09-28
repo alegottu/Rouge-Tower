@@ -7,7 +7,7 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private InputManager input = null;
     [SerializeField] private LineRenderer grappleLine = null;
     [SerializeField] private LayerMask grappleableLayers = new LayerMask();
-    [SerializeField] private float maxDistance = 1, speed = 1, pullForce = 1, cooldown = 1, animationRate = 1;
+    [SerializeField] private float maxDistance = 1, speed = 1, pullForce = 1, cooldown = 1;
 
     private RaycastHit2D grappleHit = new RaycastHit2D();
     private Vector3 direction = Vector3.zero;

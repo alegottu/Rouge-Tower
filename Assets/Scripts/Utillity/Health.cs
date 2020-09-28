@@ -8,10 +8,13 @@ public class Health : MonoBehaviour
     [SerializeField] private int baseDmg = 1;
     [SerializeField] private int minDmg = 1;
 
+    private int maxHealth = 1;
     private Rigidbody2D rb = null;
 
     private void Awake()
     {
+        maxHealth = _health;
+
         if (gameObject.TryGetComponent(out Rigidbody2D rb))
         {
             this.rb = rb;
@@ -26,6 +29,12 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Heal(int amount)
+    {
+        _health += amount;
+        _health = _health > maxHealth ? maxHealth : _health; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
